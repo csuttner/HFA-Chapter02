@@ -30,8 +30,17 @@ public class FindBeerActivity extends Activity {
 
         //TODO: Get recommendations from the BeerExpert class
 
+        List<String> recs = expert.getBrands(beerType);
 
         //TODO: Display the brands instead of the beerType using the BeerExpert class
-        brands.setText(beerType);
+
+        String output = "";
+
+        for(int i = 0; i < recs.size(); i++){
+            output += recs.get(i) + "\n ";
+        }
+
+        brands.setText(output);
+
     }
 }
